@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Product_1 = require("./Product");
+var Inventory_1 = require("./Inventory");
+var inventory = new Inventory_1.Inventory();
+inventory.addProduct(new Product_1.Product(1, "Laptop", 1200, 10, "High-performance laptop"));
+inventory.addProduct(new Product_1.Product(2, "Smartphone", 800, 20, "Latest model smartphone"));
+inventory.addProduct(new Product_1.Product(3, "Tablet", 400, 15));
+console.log("Products in Inventory:", inventory.viewProducts());
+var product = inventory.getProductById(2);
+console.log("Product with ID 2:", product);
+inventory.changeQuantity(1, 5);
+console.log("Updated product with ID 1:", inventory.getProductById(1));
+var removed = inventory.removeProduct(3);
+console.log("Product with ID 3 removed:", removed);
+var totalValue = inventory.getTotalInventoryValue();
+console.log("Total Inventory Value:", totalValue);
